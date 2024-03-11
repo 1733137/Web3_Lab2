@@ -18,7 +18,7 @@
     
         <input type="hidden" id="date" name="DatePublication" required style="display: none;">
     
-        <input type="submit" value="Ajouter">
+        <input onclick="window.location.href = 'PagePrincipale.html';" type="submit" value="Ajouter" />
     </form>
     <script>
         // Définir la date actuelle 
@@ -36,12 +36,6 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(Object.fromEntries(formData))
                 });
-                if (response.ok) {
-                    alert('Article de blog créé !');
-                    window.location.href = 'PagePrincipal.html';
-                } else {
-                    alert('Échec de la création de l\'article de blog');
-                }
             } catch (error) {
                 console.error('Erreur :', error);
                 alert('Une erreur est survenue');
